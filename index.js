@@ -6,7 +6,8 @@ const models = require('./models/models');
 const Sequelize = require('./db');
 const cors = require('cors');
 const router = require('./routes/index');
-
+const errorHandler = require('./middleware/ErrorHandlingMiddleware');
+const fileUpload = require('express-fileupload');
 //----------------------------------------
 
 const port = process.env.PORT || 5000;
@@ -14,7 +15,11 @@ const port = process.env.PORT || 5000;
 const server = express();
 server.use(cors());
 server.use(express.json());
+server.use(fileUpload({}));
 server.use('/api', router);
+
+//middleware of handler error must go last
+server.use(errorHandler);
 
 //add get
 server.get('/', (req, res)=>{
