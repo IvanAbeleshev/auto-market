@@ -12,7 +12,7 @@ class UserContoller{//grououng function on class
     async check(req, res, next) {
         const {id} = req.query;
         if(!id){
-            return next(ApiError.bedRequest('missing id'))
+            return next(ApiError.badRequest('missing id'))
         }
         res.json(id);
     }

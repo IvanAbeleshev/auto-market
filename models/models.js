@@ -31,7 +31,7 @@ const basket = Sequelize.define('basket',{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
-    }
+    } 
 });
 
 const basketProduct = Sequelize.define('basket_product',{
@@ -75,7 +75,7 @@ const product = Sequelize.define('product',{
         allowNull:false
     },
     img:{
-        type: DataTypes.FLOAT,
+        type: DataTypes.STRING, 
     }
 });
 
