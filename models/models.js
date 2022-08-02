@@ -1,6 +1,5 @@
 const Sequelize = require('../db'); // import connection to db
 const {DataTypes} = require('sequelize'); //for descriptions type filds
-const { type } = require('express/lib/response');
 
 const user = Sequelize.define('user',{
     id: {
